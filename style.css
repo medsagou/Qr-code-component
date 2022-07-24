@@ -1,0 +1,106 @@
+:root{
+   --white: hsl(0, 0%, 100%);
+   --light : hsl(212, 45%, 89%);
+   --grayish : hsl(220, 15%, 55%);
+   --dark : rgb(31, 50, 81);
+}
+body{
+    background-color: var(--white);
+}
+div.container {
+    margin: 5px;
+    float: left;
+    width: 300px;
+    border-radius: 15px;
+    height: 450px;
+    box-shadow: 0 0px 10px 0 var(--grayish);
+    background-color: var(--white);
+    transition: all .2s ease-in-out;
+  }
+div.container:hover{
+    transform: scale(1.015);
+    box-shadow: 0 10px 25px 0 var(--grayish);
+}
+div.container:hover + #coc{
+    background-color: red;
+}
+.bold{
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.container img {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both 1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    width: 90%;
+    height: 250px;
+    border-radius: 10px;
+
+}
+.text-container{
+    padding: 30px;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;;
+}
+.sub-title{
+    opacity: 45%;
+}
+.qr{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-of-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light);
+    padding: 120px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    box-shadow: 0 10px 25px 0 var(--grayish);
+    transition: all .2s ease-in-out;
+}
+@keyframes shake {
+    10% ,90%{
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+@media screen and (max-width: 600px) {
+    .container-of-container{
+       box-shadow: 0 0 0 0 var(--grayish);
+       background-color: transparent;
+       margin-top: 0px;
+       margin-bottom: 0px;
+       padding: 10px;
+    }
+
+    body{
+        background-color: var(--light);
+    }
+    div.container:hover{
+        pointer-events: none;
+        transform: scale(1);
+        box-shadow: 0 0px 10px 0 var(--grayish);
+    }
+    div.container {
+        background-color: var(--white);
+
+      }
+}
